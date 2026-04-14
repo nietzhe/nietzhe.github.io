@@ -28,7 +28,6 @@ const BREAKPOINTS = {
     cache_key: "ajRuZ2xKNDBfVVR4N1NXSGdLZGVNcXc="
 };
 
-// Typed.js — cycles through roles
 new Typed('#typed', {
     strings: CONFIG.typed_strings,
     typeSpeed: CONFIG.typing_speed,
@@ -39,7 +38,6 @@ new Typed('#typed', {
     cursorChar: '|'
 });
 
-// ===== GitHub Repos =====
 async function fetchRepos() {
     const projectList = document.getElementById('project-list');
     const projectsStatus = document.querySelector('.projects-status span:last-child');
@@ -130,7 +128,6 @@ function getLangColor(language) {
     return colors[language] || '#94a3b8';
 }
 
-// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -147,7 +144,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', () => {
     fetchRepos();
 
-    // CV download
     const cvBtn = document.getElementById('cv-download-btn');
     if (cvBtn) {
         cvBtn.addEventListener('click', () => {
@@ -161,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -193,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Scroll reveal animation
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -80px 0px'

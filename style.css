@@ -746,7 +746,7 @@ code,
 }
 
 
-/* ===== Responsive — Tablet & Below ===== */
+/* responsivity: on tablet & below */
 @media (max-width: 1024px) {
     .about-grid {
         grid-template-columns: 1fr;
