@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fico Y.P | A Portofolio</title>
+    <title>Fico Yayan Purwadi | Portfolio</title>
+    <meta name="description" content="Fico Yayan Purwadi — Cybersecurity enthusiast and aspiring penetration tester. Explore my projects, skills, and experience." />
+    <meta name="author" content="Fico Yayan Purwadi" />
+    <meta property="og:title" content="Fico Yayan Purwadi | Portfolio" />
+    <meta property="og:description" content="Cybersecurity enthusiast and aspiring penetration tester." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>></text></svg>" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" rel="stylesheet" />
     <link
@@ -13,18 +19,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="text-gray-100">
-    <div class="cyber-grid"></div>
-    <div class="scanline"></div>
+<body>
 
     <!-- Header -->
     <header class="header">
         <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
             <a href="#" class="logo">
-                <span class="text-green-400">&gt;</span> nullcranium<span class="cursor-blink">_</span>
+                <span class="logo-accent">&gt;</span> fico<span class="cursor-blink">_</span>
             </a>
 
-            <!-- Optimization for mobile -->
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -32,63 +35,35 @@
             <nav class="nav-links" id="nav-menu">
                 <a href="#home" class="nav-link">home</a>
                 <a href="#about" class="nav-link">about</a>
-                <a href="#experienced" class="nav-link">experienced</a>
+                <a href="#experience" class="nav-link">experience</a>
                 <a href="#projects" class="nav-link">projects</a>
+                <a href="#contact" class="nav-link">contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Home Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <div class="glitch-wrapper">
-                <div class="terminal-prompt">
-                    <span class="text-green-400">root@system</span>
-                    <span class="text-gray-500">:</span>
-                    <span class="text-blue-400">~</span>
-                    <span class="text-gray-500">$</span>
-                </div>
-            </div>
-            <h1 class="hero-title">
-                <span class="text-green-400">&gt;</span> I'm <span id="typed" class="typed-text"></span>
-            </h1>
-            <p class="hero-subtitle">
-                <span class="text-gray-500">//</span> Cybersecurity enthusiast | Penetration tester in training
+            <p class="hero-greeting">Hello, my name is</p>
+            <h1 class="hero-name">Fico Yayan Purwadi.</h1>
+            <h2 class="hero-title">
+                I <span id="typed" class="typed-text"></span>
+            </h2>
+            <p class="hero-description">
+                Cybersecurity enthusiast focused on penetration testing and building secure systems.
+                I enjoy breaking things to understand how to protect them.
             </p>
             <div class="hero-cta">
                 <a href="#projects" class="cta-button">
-                    <i class="fas fa-terminal"></i> View Projects
+                    View Projects
                 </a>
-                <a href="#about" class="cta-button-secondary">
-                    <i class="fas fa-user-shield"></i> About Me
+                <a href="#contact" class="cta-button-secondary">
+                    Get In Touch
                 </a>
                 <button id="cv-download-btn" class="cta-button-secondary">
-                    <i class="fas fa-file-download"></i> Download CV
+                    <i class="fas fa-download"></i> Resume
                 </button>
-            </div>
-        </div>
-
-        <!-- Toggle Icon -->
-        <button class="terminal-toggle-btn visible" id="terminal-toggle-btn" aria-label="Open terminal">
-            <i class="fas fa-terminal"></i>
-        </button>
-
-        <!-- Animated Terminal -->
-        <div class="terminal-window collapsed" id="terminal-window">
-            <div class="terminal-header">
-                <div class="terminal-buttons">
-                    <span class="dot red" id="terminal-close-btn" role="button" aria-label="Close terminal">
-                        <i class="fas fa-times close-icon"></i>
-                    </span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <span class="terminal-title">terminal@nullcranium</span>
-            </div>
-            <div class="terminal-body">
-                <div class="terminal-line">
-                    <span class="text-green-400">$</span> <span id="terminal-text"></span>
-                </div>
             </div>
         </div>
     </section>
@@ -97,7 +72,7 @@
     <section id="about" class="about-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">
-                <span class="text-green-400">02.</span> About Me
+                <span>01.</span> About Me
                 <div class="title-line"></div>
             </h2>
 
@@ -106,24 +81,32 @@
                 <div class="about-content">
                     <div class="info-card">
                         <div class="card-header">
-                            <i class="fas fa-user-secret text-green-400"></i>
-                            <h3 class="text-2xl font-bold">nullcranium</h3>
+                            <i class="fas fa-user"></i>
+                            <h3 class="text-xl font-bold">Who I Am</h3>
                         </div>
-                        <p class="text-gray-400 leading-relaxed">
-                            Passionate about cybersecurity, ethical hacking, and building secure systems.
-                            Currently exploring the depths of penetration testing and vulnerability research.
+                        <p class="text-gray-500 leading-relaxed" style="color: var(--text-secondary);">
+                            I'm a cybersecurity enthusiast with a focus on ethical hacking and
+                            vulnerability research. I enjoy dissecting systems to understand their
+                            security posture and finding ways to make them more resilient.
+                            Currently sharpening my skills in penetration testing and security analysis.
                         </p>
                     </div>
 
                     <div class="skills-card">
                         <h4 class="card-title">
-                            <i class="fas fa-code text-green-400"></i> Skills & Tools
+                            <i class="fas fa-code" style="color: var(--accent);"></i> Skills & Tools
                         </h4>
                         <div class="skills-grid">
                             <div class="skill-tag">Linux</div>
                             <div class="skill-tag">Python</div>
-                            <div class="skill-tag">Reverse Engineering</div>
                             <div class="skill-tag">Network Security</div>
+                            <div class="skill-tag">Reverse Engineering</div>
+                            <div class="skill-tag">Nmap</div>
+                            <div class="skill-tag">Burp Suite</div>
+                            <div class="skill-tag">Wireshark</div>
+                            <div class="skill-tag">Git</div>
+                            <div class="skill-tag">Web Analytics</div>
+                            <div class="skill-tag">HTML / CSS</div>
                         </div>
                     </div>
 
@@ -132,7 +115,7 @@
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="mailto:ficoyayanpurwadi@gmail.com" target="_blank" class="social-button">
+                        <a href="mailto:ficoyayanpurwadi@gmail.com" class="social-button">
                             <i class="fas fa-envelope"></i>
                             <span>Email</span>
                         </a>
@@ -143,7 +126,7 @@
                 <div class="profile-container">
                     <div class="profile-wrapper">
                         <div class="profile-border"></div>
-                        <img src="assets/petrik.jpg" alt="Profile" class="profile-image" />
+                        <img src="assets/petrik.jpg" alt="Fico Yayan Purwadi" class="profile-image" />
                         <div class="profile-overlay"></div>
                     </div>
                 </div>
@@ -152,10 +135,10 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experienced" class="experience-section">
+    <section id="experience" class="experience-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">
-                <span class="text-green-400">03.</span> Experience
+                <span>02.</span> Experience
                 <div class="title-line"></div>
             </h2>
 
@@ -163,22 +146,22 @@
                 <div class="experience-card">
                     <div class="experience-header">
                         <div class="experience-info">
-                            <h3 class="experience-role">Web Analytics</h3>
+                            <h3 class="experience-role">Web Analytics Intern</h3>
                             <p class="experience-company">PT Nakula Sadewa</p>
-                            <p class="experience-type">Aug 2024 - Sep 2024</p>
-                            <p class="experience-location">Intern | Malang, Jawa Timur, Indonesia</p>
+                            <p class="experience-type">Aug 2024 — Sep 2024</p>
+                            <p class="experience-location">Malang, Jawa Timur, Indonesia</p>
                         </div>
-                        <i class="fas fa-shield-alt text-green-400 text-2xl"></i>
+                        <i class="fas fa-chart-line" style="color: var(--accent); font-size: 1.5rem;"></i>
                     </div>
                     <ul class="experience-list">
-                        <li>Monitored weekly website performance using tools such as Google PageSpeed Insights,
-                            DebugBear, and Lighthouse to track Core Web Vitals and overall loading speed.</li>
-                        <li>Analyzed key performance metrics (LCP, CLS, INP, TBT, TTFB) and identified areas affecting
-                            user experience and page load efficiency.</li>
-                        <li>Provided optimization suggestions including image compression, caching improvements, unused
-                            CSS/JS reduction, and third-party script evaluation.</li>
-                        <li>Documented technical findings, improvement priorities, and testing results in clear and
-                            structured reports.</li>
+                        <li>Monitored weekly website performance using Google PageSpeed Insights,
+                            DebugBear, and Lighthouse to track Core Web Vitals and loading speed.</li>
+                        <li>Analyzed key performance metrics (LCP, CLS, INP, TBT, TTFB) and identified
+                            bottlenecks affecting user experience and page load efficiency.</li>
+                        <li>Provided actionable optimization suggestions including image compression,
+                            caching improvements, unused CSS/JS reduction, and third-party script evaluation.</li>
+                        <li>Documented technical findings, improvement priorities, and testing results
+                            in structured reports for the development team.</li>
                     </ul>
                 </div>
             </div>
@@ -189,16 +172,41 @@
     <section id="projects" class="projects-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">
-                <span class="text-green-400">04.</span> Projects
+                <span>03.</span> Projects
                 <div class="title-line"></div>
             </h2>
 
             <div class="projects-status">
                 <span class="status-dot"></span>
-                <span class="text-gray-400">Fetching repositories from GitHub...</span>
+                <span>Fetching repositories from GitHub...</span>
             </div>
 
             <div id="project-list" class="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title" style="justify-content: center;">
+                <span>04.</span> Get In Touch
+            </h2>
+
+            <div class="contact-content">
+                <p class="contact-description">
+                    I'm currently looking for new opportunities and my inbox is always open.
+                    Whether you have a question, a project idea, or just want to connect —
+                    feel free to reach out.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:ficoyayanpurwadi@gmail.com" class="contact-button">
+                        <i class="fas fa-envelope"></i> Send an Email
+                    </a>
+                    <a href="https://github.com/nullcranium" target="_blank" class="contact-button">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -207,13 +215,13 @@
         <div class="max-w-6xl mx-auto px-6 py-8">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p class="text-gray-500">
-                        <span class="text-green-400">&gt;</span> Built with curiosity and caffeine
+                    <p style="color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+                        Designed & built by Fico Yayan Purwadi
                     </p>
-                    <p class="text-sm text-gray-600">© 2025 nullcranium. All rights reserved.</p>
+                    <p style="color: var(--text-tertiary); font-size: 0.8rem;">&copy; 2025</p>
                 </div>
                 <a href="https://github.com/nullcranium" target="_blank" class="footer-link">
-                    <i class="fab fa-github text-2xl"></i>
+                    <i class="fab fa-github" style="font-size: 1.25rem;"></i>
                     <span>@nullcranium</span>
                 </a>
             </div>

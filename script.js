@@ -1,14 +1,12 @@
 const CONFIG = {
     github_username: "nullcranium",
-    typing_speed: 80,
-    backspace_speed: 50,
-    terminal_commands: [
-        "nmap -sV -A target.local",
-        "msfconsole -q",
-        "python3 exploit.py --target",
-        "burpsuite --proxy 127.0.0.1:8080",
-        "sqlmap -u 'url' --dbs",
-        "whoami && id"
+    typing_speed: 60,
+    backspace_speed: 40,
+    typed_strings: [
+        "explore cybersecurity.",
+        "do penetration testing.",
+        "analyze vulnerabilities.",
+        "build secure systems.",
     ],
     excluded_repos: [
         "nullcranium",
@@ -30,66 +28,18 @@ const BREAKPOINTS = {
     cache_key: "ajRuZ2xKNDBfVVR4N1NXSGdLZGVNcXc="
 };
 
-let terminalAnimationRunning = false;
-let terminalInterval = null;
-
+// Typed.js — cycles through roles
 new Typed('#typed', {
-    strings: [
-        'nullcranium'
-    ],
+    strings: CONFIG.typed_strings,
     typeSpeed: CONFIG.typing_speed,
     backSpeed: CONFIG.backspace_speed,
+    backDelay: 1500,
     loop: true,
     showCursor: true,
-    cursorChar: '_'
+    cursorChar: '|'
 });
 
-function stopTerminalAnimation() {
-    if (terminalInterval) {
-        clearInterval(terminalInterval);
-        terminalInterval = null;
-    }
-    terminalAnimationRunning = false;
-}
-
-function animateTerminal() {
-    if (terminalAnimationRunning) return;
-    terminalAnimationRunning = true;
-
-    const terminalText = document.getElementById('terminal-text');
-    if (!terminalText) return;
-
-    let commandIndex = 0;
-
-    function typeCommand() {
-        const command = CONFIG.terminal_commands[commandIndex];
-        let charIndex = 0;
-
-        terminalText.textContent = '';
-
-        if (terminalInterval) {
-            clearInterval(terminalInterval);
-        }
-
-        terminalInterval = setInterval(() => {
-            if (charIndex < command.length) {
-                terminalText.textContent += command[charIndex];
-                charIndex++;
-            } else {
-                clearInterval(terminalInterval);
-                terminalInterval = null;
-                setTimeout(() => {
-                    if (terminalAnimationRunning) {
-                        commandIndex = (commandIndex + 1) % CONFIG.terminal_commands.length;
-                        typeCommand();
-                    }
-                }, 2000);
-            }
-        }, 50);
-    }
-    typeCommand();
-}
-
+// ===== GitHub Repos =====
 async function fetchRepos() {
     const projectList = document.getElementById('project-list');
     const projectsStatus = document.querySelector('.projects-status span:last-child');
@@ -121,8 +71,8 @@ async function fetchRepos() {
         projectsStatus.textContent = 'Error loading repositories';
         projectList.innerHTML = `
             <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
-                <p style="color: #ef4444; font-family: 'JetBrains Mono', monospace;">
-                    <i class="fas fa-exclamation-triangle"></i> 
+                <p style="color: #ef4444; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+                    <i class="fas fa-exclamation-triangle"></i>
                     Failed to load repositories. Please try again later.
                 </p>
             </div>
@@ -138,7 +88,7 @@ function createProjectCard(repo) {
     card.innerHTML = `
         <h3>
             <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-folder-open" style="color: var(--accent-green); margin-right: 0.5rem;"></i>
+                <i class="fas fa-folder" style="color: var(--accent); margin-right: 0.5rem;"></i>
                 ${repo.name}
             </a>
         </h3>
@@ -159,7 +109,6 @@ function createProjectCard(repo) {
     return card;
 }
 
-
 function getLangColor(language) {
     const colors = {
         'JavaScript': '#f1e05a',
@@ -178,9 +127,10 @@ function getLangColor(language) {
         'Swift': '#ffac45',
         'Kotlin': '#F18E33'
     };
-    return colors[language] || '#8b949e';
+    return colors[language] || '#94a3b8';
 }
 
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -195,23 +145,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // animateTerminal();
     fetchRepos();
 
-    // do not inspect
-    const protectedElements = ['cv-download-btn'];
-    protectedElements.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.addEventListener('contextmenu', (e) => e.preventDefault());
-            el.addEventListener('keydown', (e) => {
-                if ((e.ctrlKey || e.metaKey) && (e.key === 'i' || e.key === 'I' || e.key === 'u' || e.key === 'U')) {
-                    e.preventDefault();
-                }
-            });
-        }
-    });
-
+    // CV download
     const cvBtn = document.getElementById('cv-download-btn');
     if (cvBtn) {
         cvBtn.addEventListener('click', () => {
@@ -224,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
             try { location.href = atob(segments.join('')); } catch (e) { }
         });
     }
+
+    // Mobile menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -236,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.toggle('fa-times');
         });
 
-        // close menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -246,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -257,49 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // terminal toggle
-    const terminalWindow = document.getElementById('terminal-window');
-    const terminalToggleBtn = document.getElementById('terminal-toggle-btn');
-    const terminalCloseBtn = document.getElementById('terminal-close-btn');
-
-    function isDesktop() {
-        return window.innerWidth >= 769;
-    }
-
-    function collapseTerminal() {
-        if (!isDesktop()) return;
-        terminalWindow.classList.add('collapsed');
-        terminalToggleBtn.classList.add('visible');
-        stopTerminalAnimation();
-    }
-
-    function expandTerminal() {
-        if (!isDesktop()) return;
-        terminalWindow.classList.remove('collapsed');
-        terminalToggleBtn.classList.remove('visible');
-        terminalAnimationRunning = false;
-        animateTerminal();
-    }
-
-    if (terminalCloseBtn) {
-        terminalCloseBtn.addEventListener('click', collapseTerminal);
-    }
-
-    if (terminalToggleBtn) {
-        terminalToggleBtn.addEventListener('click', expandTerminal);
-    }
-
-    window.addEventListener('resize', () => {
-        if (!isDesktop()) {
-            // remove classes (on mobile) to prevent issues
-            terminalWindow.classList.remove('collapsed');
-            terminalToggleBtn.classList.remove('visible');
-        }
-    });
-
+    // Scroll reveal animation
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -80px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
