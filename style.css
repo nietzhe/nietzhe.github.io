@@ -82,11 +82,26 @@ code,
 }
 
 .logo:hover {
-    color: var(--accent);
+    color: var(--text-primary); /* Remove green color on hover */
 }
 
 .logo-accent {
     color: var(--accent);
+    display: inline-block;
+}
+
+@keyframes glitch-anim {
+    0% { text-shadow: 2px 0 var(--accent), -2px 0 #ff003c; transform: translate(0); }
+    20% { text-shadow: -2px 0 var(--accent), 2px 0 #ff003c; transform: translate(-1px, 1px); }
+    40% { text-shadow: 2px 0 #ff003c, -2px 0 var(--accent); transform: translate(1px, -1px); }
+    60% { text-shadow: -2px 0 #ff003c, 2px 0 var(--accent); transform: translate(-1px, -1px); }
+    80% { text-shadow: 2px 0 var(--accent), -2px 0 #ff003c; transform: translate(1px, 1px); }
+    100% { text-shadow: -2px 0 var(--accent), 2px 0 #ff003c; transform: translate(0); }
+}
+
+.logo:hover .logo-text {
+    animation: glitch-anim 0.3s infinite linear;
+    display: inline-block;
 }
 
 .cursor-blink {

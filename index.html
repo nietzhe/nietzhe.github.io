@@ -5,12 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fico Yayan Purwadi | Portfolio</title>
-    <meta name="description" content="Fico Yayan Purwadi — Cybersecurity enthusiast and aspiring penetration tester. Explore my projects, skills, and experience." />
     <meta name="author" content="Fico Yayan Purwadi" />
     <meta property="og:title" content="Fico Yayan Purwadi | Portfolio" />
-    <meta property="og:description" content="Cybersecurity enthusiast and aspiring penetration tester." />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>></text></svg>" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>></text></svg>" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" rel="stylesheet" />
     <link
@@ -25,7 +24,8 @@
     <header class="header">
         <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
             <a href="#" class="logo">
-                <span class="logo-accent">&gt;</span> fico<span class="cursor-blink">_</span>
+                <span class="logo-accent">&gt;</span> <span class="logo-text">nietz</span><span
+                    class="cursor-blink">_</span>
             </a>
 
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
@@ -36,6 +36,7 @@
                 <a href="#home" class="nav-link">home</a>
                 <a href="#about" class="nav-link">about</a>
                 <a href="#experience" class="nav-link">experience</a>
+                <a href="#certificates" class="nav-link">certificates</a>
                 <a href="#projects" class="nav-link">projects</a>
                 <a href="#contact" class="nav-link">contact</a>
             </nav>
@@ -72,7 +73,7 @@
     <section id="about" class="about-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">
-                <span>01.</span> About Me
+                <span>&gt;</span> About Me
                 <div class="title-line"></div>
             </h2>
 
@@ -111,7 +112,7 @@
                     </div>
 
                     <div class="social-links">
-                        <a href="https://github.com/nullcranium" target="_blank" class="social-button">
+                        <a href="https://github.com/nietzhe" target="_blank" class="social-button">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
@@ -138,7 +139,7 @@
     <section id="experience" class="experience-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">
-                <span>02.</span> Experience
+                <span>&gt;</span> Experience
                 <div class="title-line"></div>
             </h2>
 
@@ -168,11 +169,50 @@
         </div>
     </section>
 
+    <!-- Certs Section -->
+    <section id="certificates" class="experience-section" style="padding-top: 0;">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title">
+                <span>&gt;</span> Certificates
+                <div class="title-line"></div>
+            </h2>
+
+            <div class="experience-container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 100%;">
+
+                <div class="project-card" style="align-items: center; text-align: center;">
+                    <img src="assets/centri-logo.png" alt="Centri"
+                        style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;">
+                    <h3 class="experience-role" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Introduction to
+                        Network Analysis</h3>
+                    <p class="experience-company" style="margin-bottom: 1rem;">CENTRI</p>
+                    <a href="https://drive.google.com/file/d/1pVrBoY6iHJ2nN8eXORYIwyEsS5QmkLHt/view?usp=sharing" target="_blank"
+                        class="project-link">
+                        <i class="fas fa-file-pdf"></i> View Certificate
+                    </a>
+                </div>
+
+                <div class="project-card" style="align-items: center; text-align: center;">
+                    <img src="assets/python-essentials-1.1.png" alt="Cisco"
+                        style="width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; border-radius: 8px;">
+                    <h3 class="experience-role" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Python Essentials 1
+                    </h3>
+                    <p class="experience-company" style="margin-bottom: 1rem;">Cisco Networking Academy</p>
+                    <a href="https://drive.google.com/file/d/18QnSxDJmHdc2nlLItz7wDg1gDDDWlsQe/view?usp=sharing" target="_blank"
+                        class="project-link">
+                        <i class="fas fa-file-pdf"></i> View Certificate
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title">
-                <span>03.</span> Projects
+                <span>&gt;</span> Projects
                 <div class="title-line"></div>
             </h2>
 
@@ -189,7 +229,7 @@
     <section id="contact" class="contact-section">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="section-title" style="justify-content: center;">
-                <span>04.</span> Get In Touch
+                <span>&gt;</span> Get In Touch
             </h2>
 
             <div class="contact-content">
@@ -202,7 +242,7 @@
                     <a href="mailto:ficoyayanpurwadi@gmail.com" class="contact-button">
                         <i class="fas fa-envelope"></i> Send an Email
                     </a>
-                    <a href="https://github.com/nullcranium" target="_blank" class="contact-button">
+                    <a href="https://github.com/nietzhe" target="_blank" class="contact-button">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
@@ -215,14 +255,15 @@
         <div class="max-w-6xl mx-auto px-6 py-8">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p style="color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+                    <p
+                        style="color: var(--text-tertiary); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
                         Designed & built by Fico Yayan Purwadi
                     </p>
                     <p style="color: var(--text-tertiary); font-size: 0.8rem;">&copy; 2025</p>
                 </div>
-                <a href="https://github.com/nullcranium" target="_blank" class="footer-link">
+                <a href="https://github.com/nietzhe" target="_blank" class="footer-link">
                     <i class="fab fa-github" style="font-size: 1.25rem;"></i>
-                    <span>@nullcranium</span>
+                    <span>@nietzhe</span>
                 </a>
             </div>
         </div>

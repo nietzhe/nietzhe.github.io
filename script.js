@@ -1,5 +1,5 @@
 const CONFIG = {
-    github_username: "nullcranium",
+    github_username: "nietzhe",
     typing_speed: 60,
     backspace_speed: 40,
     typed_strings: [
@@ -9,8 +9,8 @@ const CONFIG = {
         "build secure systems.",
     ],
     excluded_repos: [
-        "nullcranium",
-        "nullcranium.github.io",
+        "nietzhe",
+        "nietzhe.github.io",
     ],
     animation_curve: "aHR0cHM6Ly9kcml2ZS5nb29",
     easing_function: "nbGUuY29tL3VjP2V4cG9ydD1kb3"
